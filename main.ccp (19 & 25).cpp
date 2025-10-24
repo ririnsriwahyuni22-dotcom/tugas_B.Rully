@@ -30,6 +30,7 @@ void ranking(); // menampilkan data siswa berdasarkan peringkatnya
 
 int main() {
     int pilihan;
+siswa data;
     do {
         cout << "\n--MENU--" << endl;
         cout << "1. Tambah Data Siswa" << endl;
@@ -61,3 +62,4 @@ int main() {
         }
         return 0;
         }
+
