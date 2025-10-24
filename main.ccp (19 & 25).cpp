@@ -30,7 +30,6 @@ void ranking(); // menampilkan data siswa berdasarkan peringkatnya
 
 int main() {
     int pilihan;
-siswa data;
     do {
         cout << "\n--MENU--" << endl;
         cout << "1. Tambah Data Siswa" << endl;
@@ -62,4 +61,36 @@ siswa data;
         }
         return 0;
         }
+        void tambahDataSiswa(){
+        siswa a;
+        cout << "Masukkan data: \n";
+        cout << "Nama : ";
+        getline(cin, a.nama);
+        
+        cout << "NISN : " ;
+        cin>>a.NISN;
+        cout<<"Jurusan : ";
+        getline(cin, a.jurusan);
+        cout<<"Nilai :\n"; 
+            cout<<"Matematika: ";
+        cin>>a.nilai.Mtk;
+        cout<<"Bahasa Indonesia: ";
+        cin>>a.nilai.BIn;
+        cout<<"Bahasa Inggris: ";
+        cin>>a.nilai.Big;
+        cout<<"IPA: ";
+        cin>>a.nilai.IPA;
+
+        ofstream file("siswa.txt",ios::app)
+        if(file.is_open()){
+        file<<"Nama: "<<a.nama<<endl;
+            file<<"NISN: "<<a.NISN<<endl;
+            file<<"Jurusan: "<<a.jurusan<<endl;
+            file<<"Nilai: "<<endl;
+            file<<"Matematika: "<<a.nilai.Mtk<<endl;
+            file<<"Bahasa Indonesia"<<a.nilai.BIn<<endl;
+            file<<"Bahasa Inggris"<<a.nilai.BIg<<endl;
+        
+    }
+
 
