@@ -90,7 +90,10 @@ int main() {
             file<<"Matematika: "<<a.nilai.Mtk<<endl;
             file<<"Bahasa Indonesia"<<a.nilai.BIn<<endl;
             file<<"Bahasa Inggris"<<a.nilai.BIg<<endl;
+            file<<"IPA"<<a.nilai.IPA<<endl;
+        
         
     }
+
 
 
