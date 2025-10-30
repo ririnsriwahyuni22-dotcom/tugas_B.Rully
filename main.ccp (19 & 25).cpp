@@ -1,9 +1,8 @@
 #include <iostream>
 #include <fstream>
-#include <vector>
 #include <algorithm>
-
 using namespace std;
+
 struct nilai{
     float Mtk;
     float BIn;
@@ -23,11 +22,6 @@ void cariSiswa();// berdasarkan NISN
 float nilaiAkhir();// nilai akhir = 40%matematika+30%IPA+20%B indonesia +20%B Inggris
 void ranking(); // menampilkan data siswa berdasarkan peringkatnya
 
-
-
-
-
-
 int main() {
     int pilihan;
     do {
@@ -41,7 +35,6 @@ int main() {
         cout << "Pilihan (1-5):" << endl;
         cin >> pilihan;
 
-
         switch (pilihan) {
         case 1:
             tambahDataSiswa(); break;
@@ -52,27 +45,34 @@ int main() {
         case 4:
             ranking(); break;
         case 5:
-            cout << "Thanks~ \n" ; break;
+            cout << "Terimakasih \n" ; break;
             default : cout << "Tidak ada pilihan\n" ;
         }
-
         while
             (pilihan !=5)
         }
         return 0;
         }
+        
+        //menghitung nilai akhir
+        float hitungNilaiAkhir(nilai n) {
+        return (0.4 * n.Mtk) + (0.3 * n.IPA) + (0.2 * BIn) + (0.1 * n.Big); 
+        }
+        
+
+
         void tambahDataSiswa(){
         siswa a;
         cout << "Masukkan data: \n";
         cout << "Nama : ";
         getline(cin, a.nama);
-        
         cout << "NISN : " ;
         cin>>a.NISN;
         cout<<"Jurusan : ";
         getline(cin, a.jurusan);
+
         cout<<"Nilai :\n"; 
-            cout<<"Matematika: ";
+        cout<<"Matematika: ";
         cin>>a.nilai.Mtk;
         cout<<"Bahasa Indonesia: ";
         cin>>a.nilai.BIn;
@@ -80,7 +80,10 @@ int main() {
         cin>>a.nilai.Big;
         cout<<"IPA: ";
         cin>>a.nilai.IPA;
+        cin.ignore();
 
+        a.nilaiAkhir = hitungNilaiAkhir(a.Nilai);
+        
         ofstream file("siswa.txt",ios::app)
         if(file.is_open()){
         file<<"Nama: "<<a.nama<<endl;
@@ -91,9 +94,81 @@ int main() {
             file<<"Bahasa Indonesia"<<a.nilai.BIn<<endl;
             file<<"Bahasa Inggris"<<a.nilai.BIg<<endl;
             file<<"IPA"<<a.nilai.IPA<<endl;
+            file<<"NilaiAkhir<<a.nilai.akhir<<endl;
+            
+        file.close();
+            cout << "\nDara berhasil disimpan\n";
+        } else {
+            cout << "Gagal membuka file!\n";
+        }
+}
+
+    //menampilkan data
+    void tampilDataSiswa() {
+        ifstream file("siswa.txt");
+        if (!file.is_open()) {
+            cout << "File tidak ada.\n";
+            return;
+        }
+
+        siswa a;
+        cout << "\nDATA SISWA:\"n;
+        cout <<"------------------------------";
+        cout << "NISN\tNAMA\tjURUSAN\tMtk\tBInd\tBIng\tIPA\tNilaiAkhir";
+        cout <<"------------------------------";
+
+        while (file >> a.NISN >> a.nama >> a.jurusan >> a.Nilai.Mtk >> a.Nilai.BIn >> a.Nilai.BIg >> a.Nilai.IPA >> a.NilaiAkhir) {
+            cout <<  a.NISN << "\t" << a.nama << "\t" << a.jurusan << "\t" << a.Nilai.Mtk << "\t" << a.Nilai.BIn << "\t" << a.Nilai.BIg << "\t" << a.Nilai.IPA << "\t" << a.NilaiAkhir << endl;
+        }
+        file.close():
+            }
+
+    //mencari siswa
+    void tambahDataSiswa() {
+    siswa a;
+
+    cout << "\nMasukkan data siswa:\n";
+    cout << "Nama        : ";
+    getline(cin, a.nama);
+    cout << "NISN        : ";
+    getline(cin, a.NISN);
+    cout << "Jurusan     : ";
+    getline(cin, a.jurusan);
+
+    cout << "\nMasukkan nilai:\n";
+    cout << "Matematika       : "; cin >> a.Nilai.Mtk;
+    cout << "Bahasa Indonesia : "; cin >> a.Nilai.BIn;
+    cout << "Bahasa Inggris   : "; cin >> a.Nilai.Big;
+    cout << "IPA              : "; cin >> a.Nilai.IPA;
+    cin.ignore();
+
+    a.nilaiAkhir = hitungNilaiAkhir(a.Nilai);
+
+    ofstream file("siswa.txt", ios::app);
+    if (file.is_open()) {
+        file << a.NISN << " "
+             << a.nama << " "
+             << a.jurusan << " "
+             << a.Nilai.Mtk << " "
+             << a.Nilai.BIn << " "
+             << a.Nilai.Big << " "
+             << a.Nilai.IPA << " "
+             << a.nilaiAkhir << endl;
+        file.close();
+        cout << "\nData berhasil disimpan!\n";
+    } else {
+        cout << "Gagal membuka file!\n";
+    }
+}
+
         
+        
+            
+                
+            
         
     }
+
 
 
 
