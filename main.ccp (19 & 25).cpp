@@ -13,7 +13,7 @@ struct siswa{
     string nama;
     string NISN;
     string jurusan;
-    nilai Nilai; // struct in struct
+    nilai NilaiAkhir; // struct in struct
 };
 
 void tambahDataSiswa();//menambahkan data pada file siswa.txt
@@ -48,15 +48,14 @@ int main() {
             cout << "Terimakasih \n" ; break;
             default : cout << "Tidak ada pilihan\n" ;
         }
-        while
-            (pilihan !=5)
-        }
+        while  (pilihan !=5)
+        
         return 0;
         }
         
         //menghitung nilai akhir
         float hitungNilaiAkhir(nilai n) {
-        return (0.4 * n.Mtk) + (0.3 * n.IPA) + (0.2 * BIn) + (0.1 * n.Big); 
+        return (0.4 * n.Mtk) + (0.3 * n.IPA) + (0.2 * n.BIn) + (0.1 * n.Big); 
         }
         
 
@@ -84,7 +83,7 @@ int main() {
 
         a.nilaiAkhir = hitungNilaiAkhir(a.Nilai);
         
-        ofstream file("siswa.txt",ios::app)
+        ofstream file("siswa.txt",ios::app);
         if(file.is_open()){
         file<<"Nama: "<<a.nama<<endl;
             file<<"NISN: "<<a.NISN<<endl;
@@ -94,10 +93,10 @@ int main() {
             file<<"Bahasa Indonesia :"<<a.Nilai.BIn<<endl;
             file<<"Bahasa Inggris : "<<a.Nilai.Big<<endl;
             file<<"IPA"<<a.Nilai.IPA<<endl;
-            file<<"Nilai Akhir : "<<a.Nilai<<endl;
+            file<<"Nilai Akhir : "<<a.nilaiAkhir<<endl;
             
         file.close();
-            cout << "\nDara berhasil disimpan\n";
+            cout << "File berhasil disimpan\n";
         } else {
             cout << "Gagal membuka file!\n";
         }
@@ -112,7 +111,7 @@ int main() {
         }
 
         siswa a;
-        cout << "\nDATA SISWA:\"n;
+        cout << "\nDATA SISWA:\n";
         cout <<"------------------------------";
         cout << "NISN\tNAMA\tjURUSAN\tMtk\tBInd\tBIng\tIPA\tNilaiAkhir";
         cout <<"------------------------------";
@@ -166,7 +165,7 @@ int main() {
        if (file.is_open()){
            cout<<"file tidak ditemukan\n";
        }
-       Siswa daftar[100];
+       siswa daftar[100];
        int n =0;
        while (file>>daftar[n].NISN >> daftar[n].nama >>daftar[n].jurusan >>daftar[n].nilai.Mtk >>daftar[n].nilai.BIn>> daftar[n].IPA >> daftar[n].nilaiAkhir){
            n++;
@@ -186,23 +185,11 @@ daftar[j+1]=temp;
 }
 
 cout<<"RANGKING SISWA\n";
-cout<<"--------------------------------------------------------------------------\n"
+cout<<"--------------------------------------------------------------------------\n";
 cout<<"Rank\tNISN\tNama\tJurusan\tNilai akhit\n";
-for (int i=0;i<n;i++);{
+for (int i=0;i<n;i++) {
 cout<<i+1<<"\t";
-<<daftar[i].NISN<<"\t"
-    <<daftar[i].nama<<"\t"
-    <<daftar[i].jurusan<<"\t"
-    <<daftar[i].nilaiAkhir<<endl;
+<<daftar[i].NISN<<"\t" <<daftar[i].nama<<"\t" <<daftar[i].jurusan<<"\t" <<daftar[i].nilaiAkhir<<endl;
 }
    }
-
-            
-                
-            
-        
-
-
-
-
 
