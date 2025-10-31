@@ -73,13 +73,13 @@ int main() {
 
         cout<<"Nilai :\n"; 
         cout<<"Matematika: ";
-        cin>>a.nilai.Mtk;
+        cin>>a.Nilai.Mtk;
         cout<<"Bahasa Indonesia: ";
-        cin>>a.nilai.BIn;
+        cin>>a.Nilai.BIn;
         cout<<"Bahasa Inggris: ";
-        cin>>a.nilai.Big;
+        cin>>a.Nilai.Big;
         cout<<"IPA: ";
-        cin>>a.nilai.IPA;
+        cin>>a.Nilai.IPA;
         cin.ignore();
 
         a.nilaiAkhir = hitungNilaiAkhir(a.Nilai);
@@ -90,11 +90,11 @@ int main() {
             file<<"NISN: "<<a.NISN<<endl;
             file<<"Jurusan: "<<a.jurusan<<endl;
             file<<"Nilai: "<<endl;
-            file<<"Matematika: "<<a.nilai.Mtk<<endl;
-            file<<"Bahasa Indonesia"<<a.nilai.BIn<<endl;
-            file<<"Bahasa Inggris"<<a.nilai.BIg<<endl;
-            file<<"IPA"<<a.nilai.IPA<<endl;
-            file<<"NilaiAkhir<<a.nilai.akhir<<endl;
+            file<<"Matematika: "<<a.Nilai.Mtk<<endl;
+            file<<"Bahasa Indonesia :"<<a.Nilai.BIn<<endl;
+            file<<"Bahasa Inggris : "<<a.Nilai.Big<<endl;
+            file<<"IPA"<<a.Nilai.IPA<<endl;
+            file<<"Nilai Akhir : "<<a.Nilai<<endl;
             
         file.close();
             cout << "\nDara berhasil disimpan\n";
@@ -117,8 +117,8 @@ int main() {
         cout << "NISN\tNAMA\tjURUSAN\tMtk\tBInd\tBIng\tIPA\tNilaiAkhir";
         cout <<"------------------------------";
 
-        while (file >> a.NISN >> a.nama >> a.jurusan >> a.Nilai.Mtk >> a.Nilai.BIn >> a.Nilai.BIg >> a.Nilai.IPA >> a.NilaiAkhir) {
-            cout <<  a.NISN << "\t" << a.nama << "\t" << a.jurusan << "\t" << a.Nilai.Mtk << "\t" << a.Nilai.BIn << "\t" << a.Nilai.BIg << "\t" << a.Nilai.IPA << "\t" << a.NilaiAkhir << endl;
+        while (file >> a.NISN >> a.nama >> a.jurusan >> a.nilai.Mtk >> a.nilai.BIn >> a.nilai.BIg >> a.nilai.IPA >> a.nilaiAkhir) {
+            cout <<  a.NISN << "\t" << a.nama << "\t" << a.jurusan << "\t" << a.nilai.Mtk << "\t" << a.nilai.BIn << "\t" << a.nilai.Big << "\t" << a.nilai.IPA << "\t" << a.nilaiAkhir << endl;
         }
         file.close():
             }
@@ -153,7 +153,7 @@ int main() {
              << a.Nilai.BIn << " "
              << a.Nilai.Big << " "
              << a.Nilai.IPA << " "
-             << a.nilaiAkhir << endl;
+             << a.nilai << endl;
         file.close();
         cout << "\nData berhasil disimpan!\n";
     } else {
@@ -168,7 +168,7 @@ int main() {
        }
        Siswa daftar[100];
        int n =0;
-       while (file>>daftar[n],NISN >> daftar[n].nama >>daftar[n].jurusan >>daftar[n].nilai.Mtk >>daftar[n].nilai.BIn>> daftar[n].IPA >> daftar[n].nilaiAkhir){
+       while (file>>daftar[n].NISN >> daftar[n].nama >>daftar[n].jurusan >>daftar[n].nilai.Mtk >>daftar[n].nilai.BIn>> daftar[n].IPA >> daftar[n].nilaiAkhir){
            n++;
        }
         file.close();
@@ -201,6 +201,7 @@ cout<<i+1<<"\t";
                 
             
         
+
 
 
 
