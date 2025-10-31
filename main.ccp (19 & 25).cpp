@@ -160,14 +160,47 @@ int main() {
         cout << "Gagal membuka file!\n";
     }
 }
+//rangking siswa
+   void rangking(){
+       ifstream file("siswa.txt");
+       if (file.is_open()){
+           cout<<"file tidak ditemukan\n";
+       }
+       Siswa daftar[100];
+       int n =0;
+       while (file>>daftar[n],NISN >> daftar[n].nama >>daftar[n].jurusan >>daftar[n].nilai.Mtk >>daftar[n].nilai.BIn>> daftar[n].IPA >> daftar[n].nilaiAkhir){
+           n++;
+       }
+        file.close();
+if(n == 0) {
+cout << "tidak ada data siswa";
+}
+for (int i = 0; i<n-1;i++){
+for (int j=0; j<n-i-1;j++) {
+if daftar[j].nilaiAkhir< daftar [j+1].nilaiAkhir){
+Siswa temp = daftar[j];
+daftar[j] = daftar[j+1];
+daftar[j+1]=temp;
+}
+}
+}
 
-        
-        
+cout<<"RANGKING SISWA\n";
+cout<<"--------------------------------------------------------------------------\n"
+cout<<"Rank\tNISN\tNama\tJurusan\tNilai akhit\n";
+for (int i=0;i<n;i++);{
+cout<<i+1<<"\t";
+<<daftar[i].NISN<<"\t"
+    <<daftar[i].nama<<"\t"
+    <<daftar[i].jurusan<<"\t"
+    <<daftar[i].nilaiAkhir<<endl;
+}
+   }
+
             
                 
             
         
-    }
 
 
 
