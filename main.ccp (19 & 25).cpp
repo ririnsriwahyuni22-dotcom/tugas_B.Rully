@@ -54,8 +54,8 @@ int main() {
         }
         
         //menghitung nilai akhir
-        float hitungNilaiAkhir(nilai n) {
-        return (0.4 * n.Mtk) + (0.3 * n.IPA) + (0.2 * n.BIn) + (0.1 * n.Big); 
+        float hitungNilaiAkhir(Nilai n) {
+        return (0.4 * n.Mtk) + (0.3 * n.IPA) + (0.2 * n.BIn) + (0.1 * n.BIg); 
         }
         
 
@@ -192,4 +192,5 @@ cout<<i+1<<"\t";
 <<daftar[i].NISN<<"\t" <<daftar[i].nama<<"\t" <<daftar[i].jurusan<<"\t" <<daftar[i].nilaiAkhir<<endl;
 }
    }
+
 
